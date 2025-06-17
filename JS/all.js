@@ -153,8 +153,12 @@ const App = {
       // 如果該商品的 sugar 有預設值，才 disable
       this.sugarDisabled = !!item.defaults.sugar
       //飲料預設冰塊與甜度
-      this.itemSelect.defaults.ice='正常冰';
-      this.itemSelect.defaults.sugar="全糖";
+      if(!this.iceDisabled){
+        this.itemSelect.defaults.ice='正常冰';
+      }
+      if(!this.sugarDisabled){
+        this.itemSelect.defaults.sugar="全糖";
+      }      
     },
     reset(){
       this.itemSelect = JSON.parse(JSON.stringify(this.emptyItem));
