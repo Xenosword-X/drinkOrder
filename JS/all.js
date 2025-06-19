@@ -146,7 +146,10 @@ const App = {
       this.itemSelect={
         ...JSON.parse(JSON.stringify(item)),
         count:1,      
-        info:'',// 備註欄位             
+        info:'',// 備註欄位  
+        toppings: [],// 加料
+        ice: "正常冰",// 冰塊
+        sugar: "全糖"// 甜度           
       }
       // 如果該商品的 ice 有預設值，才 disable
       this.iceDisabled = !!item.defaults.ice
